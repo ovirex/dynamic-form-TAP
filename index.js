@@ -4,11 +4,11 @@ window.addEventListener("DOMContentLoaded", function () {
     );
 
     const metodosPago = [
-        "Transferencia ZELLE",
+        "ZELLE",
         "Paypal",
-        "Banesco Panamá",
-        "Bs al Cambio",
-        "Tarjeta de Crédito",
+        "Binance",
+        "Bolívares",
+        "Tarjeta de Crédito o Débito Internacional",
     ];
     /*const paisesLatino = [
         "AR",
@@ -138,6 +138,9 @@ window.addEventListener("DOMContentLoaded", function () {
                 metodoPagoMsg.className = "invisible";
                 costoConsultaMsg.className = "invisible";
                 document
+                    .querySelector(".session-packages")
+                    .classList.add("invisible");
+                document
                     .querySelector(".concretar-msg")
                     .classList.add("invisible");
                 // }
@@ -183,15 +186,18 @@ window.addEventListener("DOMContentLoaded", function () {
                         metodosPago.join(", ") + ".";
                 }*/ else {
                     document.getElementById("con-online").className = "";
-                    costoConsultaMsg.children[1].innerText = `${restoDelMundoPrecio} (USD)`;
-                    costoConsultaMsg.children.namedItem(
-                        "unit-price"
-                    ).innerText = `Precio Unitario: ${restoDelMundoPrecio} (USD)`;
-                    costoConsultaMsg.children.namedItem(
-                        "package-price"
-                    ).innerText = `Paquete 3 Consultas: ${packagePrice} (USD)`;
+                    // costoConsultaMsg.children[1].innerText = `${restoDelMundoPrecio} (USD)`;
+                    // costoConsultaMsg.children.namedItem(
+                    //     "unit-price"
+                    // ).innerText = `Precio Unitario: ${restoDelMundoPrecio} (USD)`;
+                    // costoConsultaMsg.children.namedItem(
+                    //     "package-price"
+                    // ).innerText = `Paquete 3 Consultas: ${packagePrice} (USD)`;
                     metodoPagoMsg.children[1].innerText =
                         metodosPago.join(", ") + ".";
+                    document
+                        .querySelector(".session-packages")
+                        .classList.remove("invisible");
                 }
             }
 
